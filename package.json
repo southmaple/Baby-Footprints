@@ -1,0 +1,28 @@
+{
+  "name": "baby-footprints",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": "^22.18.0 || >=24.12.0",
+    "pnpm": "10.28.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:app": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "typecheck": "pnpm --filter web type-check",
+    "lint": "pnpm --filter web lint",
+    "lint:check": "pnpm --filter web lint:check",
+    "format": "pnpm --filter web exec prettier --write ../.. --ignore-path ../../.prettierignore",
+    "format:check": "pnpm --filter web exec prettier --check ../.. --ignore-path ../../.prettierignore",
+    "test": "pnpm test:unit",
+    "test:unit": "pnpm --filter web test:unit",
+    "test:e2e": "pnpm --filter web test:e2e",
+    "test:e2e:chromium": "pnpm --filter web test:e2e:chromium",
+    "test:e2e:chrome": "pnpm --filter web test:e2e:chrome",
+    "prepare:pages": "pnpm --filter web prepare:pages",
+    "quality": "pnpm format:check && pnpm lint:check && pnpm typecheck && pnpm test:unit",
+    "verify": "pnpm quality && pnpm build"
+  }
+}
